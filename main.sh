@@ -6,19 +6,19 @@ declare -r workdir="${PWD}"
 declare -r temporary_directory='/tmp/netbsd-sysroot'
 
 declare -ra targets=(
-	'hpcsh'
-	'vax'
-	'emips'
-	'evbppc'
-	'hppa'
+	# 'hpcsh'
+	# 'vax'
+	# 'emips'
+	# 'evbppc'
+	# 'hppa'
 	'amd64'
 	'i386'
-	'alpha'
-	'sparc'
-	'sparc64'
+	# 'alpha'
+	# 'sparc'
+	# 'sparc64'
 	'evbarm-aarch64'
-	'evbarm-earmv7hf'
-	'evbarm-earmv6hf'
+	# 'evbarm-earmv7hf'
+	# 'evbarm-earmv6hf'
 )
 
 [ -d "${temporary_directory}" ] || mkdir "${temporary_directory}"
@@ -61,7 +61,7 @@ for target in "${targets[@]}"; do
 		netbsd_version='9.0'
 	fi
 	
-	declare url="https://archive.netbsd.org/pub/NetBSD-archive/NetBSD-${netbsd_version}/${target}/binary/sets"
+	declare url="https://ftp.netbsd.org/pub/NetBSD/NetBSD-${netbsd_version}/${target}/binary/sets"
 	
 	declare base_url="${url}/base.tgz"
 	declare comp_url="${url}/comp.tgz"
