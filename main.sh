@@ -59,8 +59,14 @@ for target in "${targets[@]}"; do
 	
 	declare url="https://ftp.netbsd.org/pub/NetBSD/NetBSD-${netbsd_version}/${target}/binary/sets"
 	
-	declare base_url="${url}/base.tar.xz"
-	declare comp_url="${url}/comp.tar.xz"
+	declare extension='.tar.xz'
+	
+	if [ "${target}" = 'i386' ]; then
+		extension='.tgz'
+	fi
+	
+	declare base_url="${url}/base${extension}"
+	declare comp_url="${url}/comp${extension}"
 	
 	declare base_output="${temporary_directory}/$(basename "${base_url}")"
 	declare comp_output="${temporary_directory}/$(basename "${comp_url}")"
