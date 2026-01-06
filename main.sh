@@ -55,11 +55,7 @@ for target in "${targets[@]}"; do
 			declare triplet='armv6-unknown-netbsdelf-eabihf';;
 	esac
 	
-	declare netbsd_version='8.0'
-	
-	if [ "${target}" = 'evbarm-aarch64' ]; then
-		netbsd_version='9.0'
-	fi
+	declare netbsd_version='10.1'
 	
 	declare url="https://ftp.netbsd.org/pub/NetBSD/NetBSD-${netbsd_version}/${target}/binary/sets"
 	
